@@ -49,7 +49,7 @@ const lay = computed(() => {
 const tips = computed(() => {
   const { defaultVersion } = generateVersions()
   let pathParts = route.path.split('/')
-  let versionPart = pathParts.find(part => /^\d+\.\d+\.\d+$/.test(part))
+  let versionPart = pathParts.find(part => /^\d+\.\d+\.x$/.test(part))
   let _tips = ""
 
   if (route.path.includes('/en/')) {
