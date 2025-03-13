@@ -16,7 +16,7 @@ jobs:
     build:
         runs-on: ubuntu-latest
         steps:
-            - uses: actions/checkout@v3
+            - uses: actions/checkout@v4
             - name: Checkout linglong old version
               run: |
                 # 定义版本和 commit 的映射关系
@@ -63,7 +63,7 @@ jobs:
             - name: Build Pages
               run: yarn build
             - name: Upload Artifact
-              uses: actions/upload-pages-artifact@v1
+              uses: actions/upload-pages-artifact@v3
               with:
                   path: ./.vitepress/dist
     deploy:
@@ -76,4 +76,4 @@ jobs:
         steps:
             - name: Deploy to GitHub Pages
               id: deployment
-              uses: actions/deploy-pages@v1
+              uses: actions/deploy-pages@v4
